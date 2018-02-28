@@ -1,0 +1,80 @@
+RewriteEngine on
+DirectoryIndex index.php index.html index.htm
+
+#让byu3324010001.my3w.com访问/目录laravel
+#RewriteCond %{HTTP_HOST} ^byu3324010001.my3w.com$
+#RewriteCond %{REQUEST_URI} !^/laravel/public/
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ /laravel/public/$1
+#RewriteCond %{HTTP_HOST} ^byu3324010001.my3w.com$
+#RewriteRule ^(/)?$ laravel/public/index.php [L]
+
+
+#ww.hxtz126.cn 访问/目录 laravel
+RewriteCond %{HTTP_HOST} ^ww.hxtz126.cn$
+RewriteCond %{REQUEST_URI} !^/laravel/public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /laravel/public/$1
+RewriteCond %{HTTP_HOST} ^ww.hxtz126.cn$
+RewriteRule ^(/)?$ /laravel/public/index.php [L]
+
+#ww.qltzz.cn 访问/目录 laravel
+RewriteCond %{HTTP_HOST} ^ww.qltzz.cn$
+RewriteCond %{REQUEST_URI} !^/laravel/public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /laravel/public/$1
+RewriteCond %{HTTP_HOST} ^ww.qltzz.cn$
+RewriteRule ^(/)?$ /laravel/public/index.php [L]
+
+#ww.haodai01.com 访问/目录 laravel
+RewriteCond %{HTTP_HOST} ^ww.haodai01.com$
+RewriteCond %{REQUEST_URI} !^/laravel/public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /laravel/public/$1
+RewriteCond %{HTTP_HOST} ^ww.haodai01.com$
+RewriteRule ^(/)?$ /laravel/public/index.php [L]
+
+#ww.cmsyuns.cn 访问/目录 ToPromote(推广目录)
+RewriteCond %{HTTP_HOST} ^ww.cmsyuns.cn$
+RewriteCond %{REQUEST_URI} !^/ToPromote/public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /ToPromote/public/$1
+RewriteCond %{HTTP_HOST} ^ww.cmsyuns.cn$
+RewriteRule ^(/)?$ /ToPromote/public/index.php [L]
+
+
+
+#ww.chuangdc.cn 访问/目录 ToPromote(推广目录)
+RewriteCond %{HTTP_HOST} ^ww.chuangdc.cn$
+RewriteCond %{REQUEST_URI} !^/ToPromote/public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /ToPromote/public/$1
+RewriteCond %{HTTP_HOST} ^ww.chuangdc.cn$
+RewriteRule ^(/)?$ /ToPromote/public/index.php [L]
+
+
+#ww.zengwf.com 访问/目录 laravel
+RewriteCond %{HTTP_HOST} ^ww.zengwf.com$
+RewriteCond %{REQUEST_URI} !^/two/public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /two/public/$1
+RewriteCond %{HTTP_HOST} ^ww.zengwf.com$
+RewriteRule ^(/)?$ /two/public/index.php [L]
+
+#www.zhangzhenzen.xin 访问/目录 ToPromote(推广目录)
+RewriteCond %{HTTP_HOST} ^www.zhangzhenzen.xin$
+RewriteCond %{REQUEST_URI} !^/ToPromote/public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /ToPromote/public/$1
+RewriteCond %{HTTP_HOST} ^ww.cmsyuns.cn$
+RewriteRule ^(/)?$ /ToPromote/public/index.php [L]
+
+

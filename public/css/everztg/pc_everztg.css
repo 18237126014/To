@@ -1,0 +1,182 @@
+body{
+    font-family: '微软雅黑';
+}
+.top .top_1{background:url(../../images/everztg/top_02a1.jpg) no-repeat center top;  height: 318px;}
+.top .top_2{background:url(../../images/everztg/top_03a.jpg) no-repeat center top;  height: 317px;  position: relative;}
+.top .top_3{background:url(../../images/everztg/top_04.jpg) no-repeat center top;  height: 318px;}
+.top .top_2 .ewm{position:relative;width:249px;height:249px;margin:auto;}
+.top .top_2 .ewm img{width:100%;height:100%;}
+.top .top_2 .ewm_tx{position:absolute;width:300px;height:60px;left:50%;top:38px;font-size:46px;font-weight: bold;color:#fcff00;line-height:60px;margin-left:345px;}
+.content{
+    background:url(../../images/everztg/content_sj.jpg) no-repeat center top;
+    height:649px;
+}
+.content p{
+    text-align: center;
+    position: relative;
+    font-size: 30px;
+    color: #6e2a08;
+    margin: 0px;
+    top: 123px;
+}
+table{
+    width: 640px;
+    height: 350px;
+    margin:auto;
+    text-align: center;
+    position:relative;
+    right:155px;
+    top:155px;
+}
+table th{
+     height: 65px;
+     color: white;
+     font-size: 18px;
+ }
+table td{
+    border-bottom:1px dashed #ff0000;
+}
+
+.content_t .content_1{
+    background: url(../../images/everztg/content_06.jpg) no-repeat center top;
+    height: 251px;
+}
+.content_t .content_2{
+    background: url(../../images/everztg/content_07.jpg) no-repeat center top;
+    height: 251px;
+}
+.content_t .content_3{
+    background: url(../../images/everztg/content_08.jpg) no-repeat center top;
+    height: 252px;
+}
+.content_t .content_4{
+    background: url(../../images/everztg/content_09.jpg) no-repeat center top;
+    height: 251px;
+}
+.content_t .content_5{
+    background: url(../../images/everztg/content_10.jpg) no-repeat center top;
+    height: 251px;
+}
+.content_t .content_1 .txt_1{
+    text-align: center;
+    color: white;
+}
+.content_t .content_1 .txt_1 p:first-child{
+    font-weight: bold;
+    font-size: 60px;
+    padding-top: 40px;
+}
+.content_t .content_1 .txt_1 p{
+    margin: 0px;
+    font-size: 30px;
+}
+.content_t .content_4 .txt_2{
+    text-align: center;
+    color: #FFFFFF;
+}
+.content_t .content_4 .txt_2 p{
+    margin: 0px;
+    font-size: 60px;
+    font-weight: bold;
+    padding-top: 170px;
+}
+.content_t .content_5 .btn{
+    z-index: 99;
+    display: block;
+    position: relative;
+    width: 510px;
+    height: 115px;
+    margin: auto;
+    top: 25px;
+}
+.content_t .content_5 p{
+    text-align: center;
+    font-size: 30px;
+    margin: 0px;
+    padding-top: 50px;
+    color: #FFFFFF;
+}
+.content_t .content_5 p span{
+    color: #fff000;
+}
+
+.footer{
+    height: 175px;
+    background: #a46749;
+}
+.footer p{
+    margin: 0px;
+    text-align: center;
+    line-height: 25px;
+    color: #999;
+    font-size: 14px;
+}
+.fixd_box{
+    background: url(../../images/everztg/fixd3.png) no-repeat center top;
+    height: 250px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+.fixd_box .tex{
+    position: relative;
+    top: 160px;
+    right: 185px;
+}
+.fixd_box .tex p{
+    margin: 0px;
+    font-size: 30px;
+    color: #FFf;
+    text-align: center;
+}
+.fixd_box .tex p:first-child{
+    font-size: 26px;
+}
+.fixd_box .ewm_1{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    left: 420px;
+    top: 5px;
+    margin: auto;
+}
+.fixd_box .ewm_1 img{
+    width: 150px;
+    height: 150px;
+}
+.layer_box{
+    display: none;
+    width: 470px;
+    height: 440px;
+    background: url(../../images/everztg/layer_box.png) no-repeat center top;
+    text-align: center;
+    position: relative;
+}
+.layer_box img{
+    width: 269px;
+    height: 269px;
+    text-align: center;
+    margin: auto;
+    margin-top: 85px;
+    border: 1px solid #94593b;
+    margin-right: 25px;
+}
+.layer_box .close_x{
+    width: 41px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+.layer_box p{
+    text-align: center;
+    font-size: 24px;
+    margin: 0px;
+    padding-top: 10px;
+    margin-right: 25px;
+}
+.layer_box p span{
+    font-weight: bold;
+    color: #ff0000;
+}
