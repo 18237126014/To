@@ -7,7 +7,7 @@
  */
 
 
-//ip接口调用,解析ip地址
+//ip接口调用,解析ip地址获取ip的省和市
 function analysisIp($ip)
 {
     $ipInfo = file_get_contents("http://ip.taobao.com/service/getIpInfo.php?ip=".$ip);

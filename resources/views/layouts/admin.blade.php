@@ -39,16 +39,8 @@
 <div id="sidebar">
     <a href="#" class="visible-phone"><i class="icon icon-home"></i> 控制台</a>
     <ul>
-        <li class="submenu">
-            <a href="#"><i class="icon icon-th-list"></i> <span>权限系统</span> <span class="label">3</span></a>
-            <ul>
-                <li><a href="{{url('/admin/administrators')}}">管理员管理</a></li>
-                <li><a href="#">角色管理</a></li>
-                <li><a href="#">权限管理</a></li>
-            </ul>
-        </li>
-
         <li class=""><a href="{{url('/admin')}}"><i class="icon icon-home"></i> <span>新用户</span></a></li>
+
         <li><a href="{{url('/admin/all')}}"><i class="icon icon-th"></i> <span>所有用户</span></a></li>
         <li><a href="{{url('admin/message')}}"><i class="icon icon-th"></i> <span>网页标志</span></a></li>
 

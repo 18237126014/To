@@ -105,7 +105,7 @@
 </div>
 <!--二维码扫描-->
 <div class="weixin" style="display: none">
-    <p><img src="http://img.zengwf.com/images/wxh/HX201805.jpg" alt="" width="200"></p>
+    <!-- <p><img src="http://img.zengwf.com/images/wxh/HX201805.jpg" alt="" width="200"></p> -->
     <p>如安装过程中遇到问题，请扫描二维码添加您的专属客服</p>
     <p><a href="javascript:void(0)" class="wx_colse">关闭</a></p>
 </div>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{url('css/form.css')}}">
     <link rel="stylesheet" href="{{url('css/touzi/n_pc_touzi.css')}}">
     <script src="{{url('js/jquery.js')}}"></script>
+    <!-- <script src="{{url('js/layer/layer.js')}}"></script> -->
 </head>
 <body>
 <div class="div-1">

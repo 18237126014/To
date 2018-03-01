@@ -1,5 +1,4 @@
 <?php
-
 Route::domain('ww.cmsyuns.cn')->group(function () {
 	//微信论坛推广微信1
     Route::get('lttg',function()
@@ -10,8 +9,7 @@ Route::domain('ww.cmsyuns.cn')->group(function () {
     Route::get('slttg',function()
     {
         return view('cmsyuns.lttg.sj_3_1_wxtg');
-    
-});
+    });
     //亏损
     Route::get('kuisun',function()
     {
@@ -22,8 +20,9 @@ Route::domain('ww.cmsyuns.cn')->group(function () {
     {
         return view('cmsyuns.kuisun.sj_3_2_kuisun');
     });
-
-
+	
+	
+	
 	//投资神器
     Route::get('/', function () {
         return view('cmsyuns.hqfx.pc_3_touzi');
@@ -289,30 +288,8 @@ Route::domain('ww.cmsyuns.cn')->group(function () {
         return view('cmsyuns.wxtg.sj_3_2_wxtg');
     });
 	
-	//每天一个涨停股
-    Route::get('everztg',function()
-    {
-        return view('cmsyuns.everztg.pc_ztg');
-    });
-    //手机 每天一个涨停股
-    Route::get('meverztg',function()
-    {
-        return view('cmsyuns.everztg.sj_ztg');
-    });
-
-	//股票  岁末捞金
-    Route::get('gp_smlj',function()
-    {
-        return view('cmsyuns.gp_smlj.pc');
-    });
-    //股票  岁末捞金
-    Route::get('gp_tbbk',function()
-    {
-        return view('cmsyuns.gp_tbbk.pc');
-    });
-
-    //微信爆好股
-    Route::get('wxbh',function()
+	//微信爆好股
+	Route::get('wxbh',function()
     {
         return view('cmsyuns.wxbh.pc_wxbh');
     });
@@ -321,5 +298,7 @@ Route::domain('ww.cmsyuns.cn')->group(function () {
     {
         return view('cmsyuns.gpxx.pc_gpxx');
     });
+	
+	
 	
 });

@@ -44,7 +44,7 @@
 <!--遮罩层-->
 <div class="layui-layer-shade" id="layui-layer-shade3" time="3" style="display:none;"></div>
 <!--表单-->
-<div class="layui-layer layui-layer-page layer-form layer-anim" id="layui-layer3" type="page" showtime="0"time="3" contype="object" style="display: none;">
+<div class="layui-layer layui-layer-page layer-form layer-anim" id="layui-layer3" type="page" showtime="0" time="3" contype="object" style="display: none;">
     <div id="" class="layui-layer-content">
         <div class="modal-form layui-layer-wrap" id="modal-form" style="display: block;">
             <p style="font-size: 40px;color:#41A5DD ;text-align: center;padding-top: 40px;">免费下载</p>

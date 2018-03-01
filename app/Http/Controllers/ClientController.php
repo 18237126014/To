@@ -73,21 +73,16 @@ class ClientController extends Controller
             $url = strstr($url,'?',true);
         }
         $url = trim($url,'/');
-        //
-        // $urlId = UrlMessage::select(['id'])->where('url',$url)->first()->toArray()['id'];
-        $res = UrlMessage::select(['id'])->where('url',$url)->first();
-        $urlId = 0;
-        if(!empty($res))
-        {   
-            $urlId = $res->id;
-        }
+        // echo $url;
+        $urlId = UrlMessage::select(['id'])->where('url',$url)->first()->toArray()['id'];
+        ;
         DB::beginTransaction();
         try{
             $client = new Client();
             $source = new Source();
             //获取搜索引擎和关键词
             $sourceInfo = getKeyWord($request -> sourceUrl);
-
+            
             //判断手机号是否存在
             $data = Client::all()->where('client_phone',$request->phone)->toArray();
             //判断手机号是否重复
@@ -117,8 +112,6 @@ class ClientController extends Controller
                 'keyword' => $sourceInfo['keyword'],
                 'url' => $urlId
             ]);
-            
-        
             //var_dump($client_id);die;
             if(empty($request -> sourceUrl)) {
                 $request->sourceUrl = '没有搜索来源,是直接输入地址的';
@@ -128,9 +121,6 @@ class ClientController extends Controller
                 'client_id' => $client_id,
                 'search_url'=> $request->sourceUrl
             ]);
-
-            
-
             /*$source -> client_id = $client -> id;
             $source -> search_url = $request->sourceUrl;
             $source -> save();*/

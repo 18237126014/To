@@ -17,24 +17,24 @@ class UserController extends Controller
     {
         //var_dump($_POST);
         $user = User::where('user_account',$_POST['user_account'])->first();
-        //$user = User::where('user_account','abc')->first();
+                //$user = User::where('user_account','abc')->first();
 
-        //判断账号是否存在
-        if(!empty($user))
-        {
-            $user = $user->toArray();
-            //判断账号密码是否正确
-            if(md5($_POST['user_pwd']) == $user['user_pwd'])
-            {
-                session(['user_id' => $user['id']]);
+                //判断账号是否存在
+                if(!empty($user))
+                {
+                    $user = $user->toArray();
+                    //判断账号密码是否正确
+                    if(md5($_POST['user_pwd']) == $user['user_pwd'])
+                    {
+                        session(['user_id' => $user['id']]);
 
-                echo "<script>alert('登入成功');window.location.href='/admin';</script>";
-            }else{
-                echo "<script>alert('账号或密码错误');window.location.href='/admin/login';</script>";
-            }
-        }else
-            {
-                echo "<script>alert('账号或密码错误');window.location.href='/admin/login';</script>";
+                        echo "<script>alert('登入成功');window.location.href='/admin';</script>";
+                    }else{
+                        echo "<script>alert('账号或密码错误');window.location.href='/admin/login';</script>";
+                    }
+                }else
+                {
+                    echo "<script>alert('账号或密码错误');window.location.href='/admin/login';</script>";
 
             }
     }
@@ -149,13 +149,17 @@ class UserController extends Controller
                 $mark = '神马';
                 break;
         }*/
-        $mark = getMark($host);
-        if($mark == '')
-        {
-            $se_url_id = UrlMessage::select(['id'])->get();
-        }else{
-            $se_url_id = UrlMessage::select(['id'])->where('url_se',$mark)->get();
-        }
+        //根据360、神马区分用户
+        // $mark = getMark($host);
+        // if($mark == '')
+        // {
+        //     $se_url_id = UrlMessage::select(['id'])->get();
+        // }else{
+        //     $se_url_id = UrlMessage::select(['id'])->where('url_se',$mark)->get();
+        // }
+        // 根据url域名区分
+        // $host = 'ww.chuangdc.cn';
+        $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')->get();
         if(!$se_url_id->isEmpty())
         {
             $se_url_id = $se_url_id ->toArray();

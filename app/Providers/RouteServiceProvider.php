@@ -74,7 +74,7 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/chuangdc.php'));
-            //www.zhangzhenzen.xin
+        //www.zhangzhenzen.xin
         Route::middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/zhangzhenzen.php'));

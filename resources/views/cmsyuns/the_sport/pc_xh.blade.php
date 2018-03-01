@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{url('css/the_sport/xh.css')}}">
     <link rel="stylesheet" href="{{url('css/form.css')}}">
     <script src="{{url('js/jquery.js')}}"></script>
+    <script src="{{url('js/layer/layer.js')}}"></script>
     <style>
         .copyright{
             width:100%;

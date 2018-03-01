@@ -25,9 +25,6 @@ Route::group(['prefix' => 'admin'],function()
     Route::post('doLogin','admin\UserController@doLogin');
     Route::get('logout','admin\UserController@logout');
     Route::get('/','admin\UserController@index');
-    Route::get('administrators','admin\UserController@getUserIndex');
-
-
     Route::get('test','admin\UserController@test');
     Route::get('all','admin\UserController@all');
     Route::get('search','admin\ClientController@search');
