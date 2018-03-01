@@ -216,6 +216,7 @@ function handingIp($ip)
     }
 }
 //获取登录用户的权限等级
+//1 超级管理员 2业务员/操作员
 function getUserRughts()
 {
     //var_dump(session('user_id'));

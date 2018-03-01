@@ -64,10 +64,14 @@
                                 <th>id</th>
                                 <th>姓名</th>
                                 <th>电话</th>
+                                @if (getUserRughts() == 1)
                                 <th>ip</th>
+                                @endif
                                 <th>添加来源</th>
                                 <th>搜索引擎</th>
+                                @if (getUserRughts() == 1)
                                 <th>关键词</th>
+                                @endif
                                 <th>添加时间</th>
                                 @if (getUserRughts() == 1)
                                     <th >操 作</th>
@@ -85,7 +89,9 @@
                                     <td style="display:table-cell; vertical-align:middle">{{$v['id']}}</td>
                                     <td style="display:table-cell; vertical-align:middle">{{$v['client_name']}}</td>
                                     <td style="display:table-cell; vertical-align:middle">{{ getUserRughts()== 1 ? $v['client_phone']: substr_replace($v['client_phone'],'****',3,4)}}</td>
+                                    @if (getUserRughts() == 1)
                                     <td style="display:table-cell; vertical-align:middle">{{$v['ip']}}</td>
+                                    @endif
                                     <td style="display:table-cell; vertical-align:middle">
                                         @if(!empty($v['url']))
                                             <?php
@@ -101,11 +107,13 @@
                                             {{$v['source']}}
                                         @endif
                                     </td>
+                                    @if(getUserRughts() == 1)
                                     <td style="display:table-cell; vertical-align:middle" >
                                         @if(!empty($v['keyword']))
                                             {{$v['keyword']}}
                                         @endif
                                     </td>
+                                    @endif
                                     <td style="display:table-cell; vertical-align:middle" >{{ date('Y-m-d H:i:s',$v['add_time'])}}</td>
                                     @if(getUserRughts() == 1)
                                         <td style="display:table-cell; vertical-align:middle"><a href="javascript:void(0)" onclick="del({{$v['id']}})">删除</a></td>

@@ -17,12 +17,14 @@ class UserController extends Controller
     {
         //var_dump($_POST);
         $user = User::where('user_account',$_POST['user_account'])->first();
+        // var_dump($user);
                 //$user = User::where('user_account','abc')->first();
-
+                //使用md5()加密
                 //判断账号是否存在
                 if(!empty($user))
                 {
                     $user = $user->toArray();
+
                     //判断账号密码是否正确
                     if(md5($_POST['user_pwd']) == $user['user_pwd'])
                     {
@@ -127,8 +129,14 @@ class UserController extends Controller
 
     public function test()
     {
-        getUserRughts();
+        
+         getUserRughts();
+        
     }
+
+    
+    
+
 
     public function all(Request $request)
     {
@@ -157,6 +165,8 @@ class UserController extends Controller
         // }else{
         //     $se_url_id = UrlMessage::select(['id'])->where('url_se',$mark)->get();
         // }
+        
+        
         // 根据url域名区分
         // $host = 'ww.chuangdc.cn';
         $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')->get();
