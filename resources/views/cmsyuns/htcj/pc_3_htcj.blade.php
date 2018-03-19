@@ -110,7 +110,7 @@
                 <input type="hidden" name="_token" value="{{csrf_token()}}" id="_token">
                 <div class="form-content">
                     <div class="form-group">
-                        <label for="txtName1" class="form-label">姓&nbsp;&nbsp;&nbsp;&nbsp;名</label>
+                        <label for="txtName1" class="form-label">姓&nbsp;&nbsp;名</label>
                         <div class="form-input">
                             <input type="text" name="txtName1" id="txtName1" aria-required="true">
                         </div>

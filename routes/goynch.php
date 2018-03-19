@@ -1,5 +1,5 @@
 <?php
-Route::domain('ww.chuangdc.cn')->group(function () {
+Route::domain('ww.goynch.cn')->group(function () {
 	//微信论坛推广微信1
     Route::get('lttg',function()
     {
@@ -302,6 +302,10 @@ Route::domain('ww.chuangdc.cn')->group(function () {
     Route::get('gpxx',function()
     {
         return view('cmsyuns.gpxx.pc_gpxx');
+    });
+    //手机智能行情交易系统
+    Route::get('sznhq',function(){
+        return view('cmsyuns.znhq.sj_znhq');
     });
 	
 	

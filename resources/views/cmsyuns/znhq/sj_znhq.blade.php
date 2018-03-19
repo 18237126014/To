@@ -1,92 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>博易大师期货</title>
-    <link rel="stylesheet" href="{{url('/css/boyi/sj_boyi.css')}}">
-    <link rel="stylesheet" href="{{url('/css/sj_form.css')}}">
-    <script src="{{url('js/boyi/fastclick.js')}}"></script>
-    <script src="{{url('js/boyi/jquery.js')}}"></script>
-</head>
-<body>
 
-<div class="head">
-    <div class="head_content clearfix">
-        <img src="http://img.zengwf.com/images/boyi/diann.png" alt="" class="fl" style="margin-left:100px">
-        <img src="http://img.zengwf.com/images/boyi/boyititle.png" alt="" class="fr" style="margin-right:100px">
-        <div style="clear: both"></div>
-        <ol class="clearfix" id="downBtn">
-            <li>
-                <a href="javascript:void(0)"><img src="http://img.zengwf.com/images/boyi/icon_03.gif" alt="" ></a>
-            </li>
-            <li>
-                <a href="javascript:void(0)"><img src="http://img.zengwf.com/images/boyi/icon_05.gif" alt="" ></a>
-            </li>
-        </ol>
-    </div>
-</div>
-<div class="content">
-    <div class="top_img w1010">
-        <img src="http://img.zengwf.com/images/boyi/top_img.png" alt="">
-    </div>
-    <div class="main_content">
-        <h1>因为专业——2017投资贵金属首选我们！</h1>
-        <div class="main">
-            <div class="abou_txt">
-                <strong>
-                    <span>实时行情更新播报</span>抢占市场先机
-                </strong>
-                <p>精准行情 有情有“益”</p>
-            </div>
-            <div class="abou_img">
-                <img src="http://img.zengwf.com/images/boyi/pc_18.jpg" alt="" width="344" height="201">
-            </div>
-        </div>
-        <div class="main">
-            <div class="abou_img">
-                <img src="http://img.zengwf.com/images/boyi/pc_19.jpg" alt="" width="344" height="201">
-            </div>
-            <div class="abou_txt2">
-                <strong>
-                    <span>国际分析团队指点制胜</span>                手把手教你盈利
-                </strong>
-                <p>实战中学经验 零风险投资</p>
-            </div>
+	<head>
+		<meta charset="UTF-8">
+		<title>智能行情交易系统</title>
+		<script src="{{url('/js/znhq/jquery-1.11.3.min.js')}}"></script>
+		<script src="{{url('/js/znhq/register.js')}}"></script>
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					isIOS = navigator.userAgent.match(/iphone|ipod|ipad/gi),
+					dpr = isIOS ? Math.min(win.devicePixelRatio, 3) : 1,
+					dpr = window.top === window.self ? dpr : 1, //被iframe引用时，禁止缩放
+					dpr = 1, // 首页引用IFRAME，强制为1
+					scale = 1 / dpr,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+				docEl.dataset.dpr = win.devicePixelRatio;
+				if(navigator.userAgent.match(/iphone/gi) && screen.width == 375 && win.devicePixelRatio == 2) {
+					docEl.classList.add('iphone6')
+				}
+				if(navigator.userAgent.match(/iphone/gi) && screen.width == 414 && win.devicePixelRatio == 3) {
+					docEl.classList.add('iphone6p')
+				}
+				var metaEl = doc.createElement('meta');
+				metaEl.name = 'viewport';
+				metaEl.content = 'initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale;
+				docEl.firstElementChild.appendChild(metaEl);
+				var recalc = function() {
+					var width = docEl.clientWidth;
+					if(width / dpr > 750) {
+						width = 750 * dpr;
+					}
+					docEl.style.fontSize = 100 * (width / 750) + 'px';
+				};
+				recalc()
+				if(!doc.addEventListener) return;
+				// win.addEventListener(resizeEvt, recalc, false);
+			})(document, window);
+		</script>
 
-        </div>
-        <div class="main">
-            <div class="abou_txt3">
-                <strong>
-                    <span>覆盖贵金属外汇</span>                所有走势行情
-                </strong>
-                <p>贵金属、黄金、白银、外汇、天通银全面覆盖</p>
-            </div>
-            <div class="abou_img">
-                <img src="http://img.zengwf.com/images/boyi/pc_20.jpg" alt="" width="344" height="201">
-            </div>
-        </div>
-        <div class="main">
-            <div class="abou_img">
-                <img src="http://img.zengwf.com/images/boyi/pc_21.jpg" alt="" width="344" height="201">
-            </div>
-            <div class="abou_txt4">
-                <strong>
-                    <span>何时该买?</span>                何时该卖?
-                </strong>
-                <p class="xg">全程智能化决策，简单易用，
-                    <span class="dkd">多空带</span>买卖点提示，行情动荡，精准掌握多空买卖拐点，祝你低价买入，高价卖出。
-                </p>
-            </div>
+		<link rel="stylesheet" href="{{url('/css/znhq/style.css')}}">
+		<link rel="stylesheet" href="{{url('/css/sj_form.css')}}">
+		<script>
+			var _hmt = _hmt || [];
+			(function() {
+				var hm = document.createElement("script");
+				hm.src = "{{url('/js/znhq/hm.js')}}";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
+	</head>
 
-        </div>
-    </div>
+	<body>
+		<div class="wraptext">
+			<div class="wrap">
+				<p class="header">顶级平台 | 投资首选</p>
+				<img src="/images/znhq/jiaoyiImg-1.jpg" />
+				<div class="bannerDown">
+					<p>
+						<a href="javascript:void(0)">
+							<span  class="zsbtn-link p-link btn">免费下载</span>
+						</a>手机端正版软件
+					</p>
+				</div>
+				<img src="/images/znhq/jiaoyiImg-3.jpg" />
+				<img src="/images/znhq/jiaoyiImg-4.jpg" />
+				<div class="youshibg">
+					<h2 class="h3-title">
+					<span>软件优势</span>
+				</h2>
+					<div class="indexEightList">
 
-</div>
-<div class="footer">
-    <h2>投资有风险,入市需谨慎</h2>
-    <p>&copy; 版权所有：金创互动科技（深圳）有限公司   ICP备案号：粤ICP备16102940号-1</p>
-</div>
+						<dl>
+							<dt>内嵌在线<br />跟单系统</dt>
+							<dd>内嵌在线跟单系统，可查看同期操盘手展示账户，并参考其近期交易数据，让您决策更加精准</dd>
+						</dl>
+						<dl>
+							<dt>多终端版<br />本更方便</dt>
+							<dd>智能行情交易系统提供多终端版本，能满足不同环境、不同时期的投资者需求；真正随时随地交易，随时随地查看收益</dd>
+						</dl>
+						<dl>
+							<dt>门槛低 <br />品种多</dt>
+							<dd>合约保证金交易，门槛低，1000元起 即可参与投资；同时可交易品种多， 基本包含市场热门品种</dd>
+						</dl>
+						<dl>
+							<dt>自主<br />出入金</dt>
+							<dd>实名认证用户，实行自主出入金，轻 松存取，轻松</dd>
+						</dl>
+						<dl>
+							<dt>专业严格风<br />控团队把控</dt>
+							<dd>大数据分析，更加精准，专业团队， 引领行业标杆，细致分工，让每个环 节都更加专业</dd>
+						</dl>
 
+						<dl>
+							<dt>界面清爽<br />操作便捷</dt>
+							<dd>智能行情交易系统界面简洁清爽，操作简单快捷，更流畅，经多次测试，保证提供最好的操作体验</dd>
+						</dl>
+					</div>
+				</div>
+				<img src="/images/znhq/jiaoyiImg-6.jpg" />
+				<img src="/images/znhq/jiaoyiImg-7.jpg" />
+				<div class="footer-text">
+					投资有风险，入市需谨慎
+				</div>
+				<div class="footer-text2">
+					版权所有：金创互动科技（深圳）有限公司   ICP备案号：粤ICP备16102940号-1
+				</div>
+			</div>
+			<div class="down-fixed p-link btn">
+
+				<a href="javascript:void(0)">立即下载</a>
+			</div>
+		</div>
 {{--写跳转过来的页面--}}
 <input type="hidden" name="referr" value="<?= isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] :'' ?>">
 <!--遮罩层-->
@@ -158,7 +184,7 @@
 </script>
 <script>
     //获取下载按钮
-    var Btns = $('#downBtn li');
+    var Btns = $('.btn');
     //获取遮罩层和表单元素
     var mask = $('#layui-layer-shade3');
     var Form = $('#layui-layer3');

@@ -146,6 +146,7 @@ class UserController extends Controller
         $se_url_id = '';
         //当搜索平台的条件不等于0的时候处理平台选项
         $host = $_SERVER['HTTP_HOST'];
+        
         /*switch($host){
             case 'ww.qltzz.cn':
                 $mark = '360';

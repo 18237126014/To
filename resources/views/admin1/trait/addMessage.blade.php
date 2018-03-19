@@ -56,6 +56,7 @@
                                         <option >360</option>
                                         <option >搜狗</option>
                                         <option >神马</option>
+                                        <option >百度</option>
                                     </select>
                                 </div>
                             </div>

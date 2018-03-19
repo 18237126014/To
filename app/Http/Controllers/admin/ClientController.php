@@ -54,17 +54,29 @@ class ClientController extends Controller
 				$mark = '神马';
 				break;
 		}*/
-		$mark = getMark($host);
-        if($mark == '')
-        {
-            $se_url_id = UrlMessage::select(['id'])->get();
-        }else{
-            $se_url_id = UrlMessage::select(['id'])->where('url_se',$mark)->get();
-        }
+        //不分类查询
+		// $mark = getMark($host);
+  //       if($mark == '')
+  //       {
+  //           $se_url_id = UrlMessage::select(['id'])->get();
+  //       }else{
+  //           $se_url_id = UrlMessage::select(['id'])->where('url_se',$mark)->get();
+  //       }
+  //       if(!$se_url_id->isEmpty())
+  //       {
+  //           $se_url_id = $se_url_id ->toArray();
+  //       }
+        
+        // 根据url域名区分查询
+        // $host = 'ww.chuangdc.cn';
+        $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')->get();
+
         if(!$se_url_id->isEmpty())
         {
             $se_url_id = $se_url_id ->toArray();
+
         }
+
 		//var_dump($se_url_id);
 		if(!empty($request -> search_time) || !empty($request -> search_word) )
         {
