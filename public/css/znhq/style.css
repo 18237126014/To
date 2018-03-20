@@ -30,6 +30,8 @@ ul {
   padding: 0;
   border: none;
   outline: none;
+  text-decoration:none;
+  color: #d0a12e;
 }
 ul {
   list-style: none;
@@ -102,7 +104,7 @@ input {
   background: #fff8e6;
 }
 .bannerDown {
-  background: url(/images/znhq/jiaoyiImg-2.jpg) no-repeat;
+  background: url(http://img.zengwf.com/images/znhq/jiaoyiImg-2.jpg) no-repeat;
   background-size: 100% 1.54rem;
   height: 1.54rem;
   color: #fff;
@@ -110,7 +112,7 @@ input {
 }
 .bannerDown span {
   display: block;
-  background: #2069dd url(/images/znhq/tradingSystem-icon1.png) no-repeat 0.7rem center;
+  background: #2069dd url(http://img.zengwf.com/images/znhq/tradingSystem-icon1.png) no-repeat 0.7rem center;
   background-size: 0.3rem auto;
   color: #fff;
   padding-left: 1.14rem;
@@ -124,7 +126,7 @@ input {
   text-align: left;
 }
 .youshibg {
-  background: url(/images/znhq/jiaoyiImg-5.jpg) no-repeat;
+  background: url(http://img.zengwf.com/images/znhq/jiaoyiImg-5.jpg) no-repeat;
   background-size: 100% 100%;
 }
 .youshibg .h3-title {
@@ -153,7 +155,7 @@ input {
 }
 .indexEightList dl dt {
   height: 1.32rem;
-  background: url(/images/znhq/jiaoyiImg-icon.png) no-repeat center 0;
+  background: url(http://img.zengwf.com/images/znhq/jiaoyiImg-icon.png) no-repeat center 0;
   background-size: 1.2rem 1.32rem;
   line-height: 1.5;
   padding-top: 0.3rem;
@@ -213,7 +215,7 @@ input {
   position: relative;
   top: 20%;
   height: 6.71rem;
-  background: url(../images/winbg.png) no-repeat;
+  background: url(http://img.zengwf.com/winbg.png) no-repeat;
   background-size: 100% 6.71rem;
 }
 .winboxbg .winbox .p-close {
