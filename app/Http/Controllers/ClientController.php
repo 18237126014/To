@@ -68,6 +68,7 @@ class ClientController extends Controller
         }
         //处理数据
         $url = $request -> url;
+
         $count = strpos($url,'http://');
         $url = substr_replace($url,'',$count,7);
         if(strpos($url,'?'))

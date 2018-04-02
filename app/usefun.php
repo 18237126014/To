@@ -92,6 +92,7 @@ function getUrlId($url_message)
 }
 //获取关键词
 function getKeyWord($url)
+
 {
     if(!empty($url))
     {

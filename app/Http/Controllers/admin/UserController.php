@@ -71,6 +71,7 @@ class UserController extends Controller
         $se_url_id = '';
         //当搜索平台的条件不等于0的时候处理平台选项
         $host = $_SERVER['HTTP_HOST'];
+
         /*switch($host){
             case 'ww.qltzz.cn':
                 $mark = '360';
@@ -83,9 +84,10 @@ class UserController extends Controller
                 break;
         }*/
         $mark = getMark($host);
+
         if($mark == '')
         {
-            $se_url_id = UrlMessage::select(['id'])->get();
+            $se_url_id = UrlMessage::select(['id'])->get();    
         }else{
             $se_url_id = UrlMessage::select(['id'])->where('url_se',$mark)->get();
         }
@@ -167,10 +169,28 @@ class UserController extends Controller
         //     $se_url_id = UrlMessage::select(['id'])->where('url_se',$mark)->get();
         // }
         
-        
-        // 根据url域名区分
+        //2.根据权限来显示页面上的数据
+        //(1)-显示所有 (2)显示当前所有(打马赛克) 
+        //(3)-除去xsy和sport的当前域名 (4).只显示xsy/sport
+        if (getUserRughts() == 1) {
+           $se_url_id = UrlMessage::select(['id'])->get();
+        }elseif (getUserRughts() == 2) {
+           $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')->get();
+        }elseif(getUserRughts() == 3){
+           $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')
+           ->where('url','not like','%xsy%')
+           ->where('url','not like','%sport%')
+           ->get(); 
+        }elseif(getUserRughts() == 4){
+            $se_url_id = UrlMessage::select(['id'])->where('url','like','%xsy%')
+            ->orwhere('url','like','%sport%')
+            ->get();
+        }
+
+        // 1.根据url域名区分
         // $host = 'ww.chuangdc.cn';
-        $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')->get();
+        // $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')->get();
+
         if(!$se_url_id->isEmpty())
         {
             $se_url_id = $se_url_id ->toArray();

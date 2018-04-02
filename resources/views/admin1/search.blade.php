@@ -69,7 +69,7 @@
                                 <th>搜索引擎</th>
                                 <th>关键词</th>
                                 <th>添加时间</th>
-                                @if (getUserRughts() == 1)
+                                @if (getUserRughts() != 2)
                                     <th >操 作</th>
                                 @endif
                             </tr>
@@ -80,7 +80,7 @@
                                 <tr>
                                     <td style="display:table-cell; vertical-align:middle">{{$v['id']}}</td>
                                     <td style="display:table-cell; vertical-align:middle">{{$v['client_name']}}</td>
-                                    <td style="display:table-cell; vertical-align:middle">{{ getUserRughts()== 1 ? $v['client_phone']: substr_replace($v['client_phone'],'****',3,4)}}</td>
+                                    <td style="display:table-cell; vertical-align:middle">{{ getUserRughts()!= 2 ? $v['client_phone']: substr_replace($v['client_phone'],'****',3,4)}}</td>
                                     <td style="display:table-cell; vertical-align:middle">{{$v['ip']}}</td>
                                     <td style="display:table-cell; vertical-align:middle">
                                         @if(!empty($v['url']))
@@ -103,7 +103,7 @@
                                         @endif
                                     </td>
                                     <td style="display:table-cell; vertical-align:middle" >{{ date('Y-m-d H:i:s',$v['add_time'])}}</td>
-                                    @if(getUserRughts() == 1)
+                                    @if(getUserRughts() != 2)
                                         <td style="display:table-cell; vertical-align:middle"><a href="javascript:void(0)" onclick="del({{$v['id']}})">删除</a></td>
                                     @endif
                                 </tr>

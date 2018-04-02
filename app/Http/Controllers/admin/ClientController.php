@@ -54,6 +54,7 @@ class ClientController extends Controller
 				$mark = '神马';
 				break;
 		}*/
+        
         //不分类查询
 		// $mark = getMark($host);
   //       if($mark == '')
@@ -67,17 +68,34 @@ class ClientController extends Controller
   //           $se_url_id = $se_url_id ->toArray();
   //       }
         
-        // 根据url域名区分查询
+        // 1.根据url域名区分查询
         // $host = 'ww.chuangdc.cn';
-        $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')->get();
-
+        // $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')->get();
+        
+        //2.根据权限来显示页面上的数据 权限为
+        //(1)-显示所有 (2)显示当前所有(打马赛克) 
+        //(3)-除去xsy和sport的当前域名 (4).只显示xsy/sport
+        if (getUserRughts() == 1) {
+           $se_url_id = UrlMessage::select(['id'])->get();
+        }elseif (getUserRughts() == 2) {
+           $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')->get();
+        }elseif(getUserRughts() == 3){
+           $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')
+           ->where('url','not like','%xsy%')
+           ->where('url','not like','%sport%')
+           ->get(); 
+        }elseif(getUserRughts() == 4){
+            $se_url_id = UrlMessage::select(['id'])->where('url','like','%xsy%')
+            ->orwhere('url','like','%sport%')
+            ->get();
+        }
         if(!$se_url_id->isEmpty())
         {
             $se_url_id = $se_url_id ->toArray();
 
         }
 
-		//var_dump($se_url_id);
+		// var_dump($se_url_id);
 		if(!empty($request -> search_time) || !empty($request -> search_word) )
         {
 			//当搜索时间不为空时,处理搜索时间
