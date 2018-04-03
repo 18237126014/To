@@ -57,16 +57,16 @@ class ClientController extends Controller
         
         //不分类查询
 		// $mark = getMark($host);
-  //       if($mark == '')
-  //       {
-  //           $se_url_id = UrlMessage::select(['id'])->get();
-  //       }else{
-  //           $se_url_id = UrlMessage::select(['id'])->where('url_se',$mark)->get();
-  //       }
-  //       if(!$se_url_id->isEmpty())
-  //       {
-  //           $se_url_id = $se_url_id ->toArray();
-  //       }
+      //  if($mark == '')
+      //  {
+      //           $se_url_id = UrlMessage::select(['id'])->get();
+      //       }else{
+      //           $se_url_id = UrlMessage::select(['id'])->where('url_se',$mark)->get();
+      //       }
+      //       if(!$se_url_id->isEmpty())
+      //       {
+      //           $se_url_id = $se_url_id ->toArray();
+      //       }
         
         // 1.根据url域名区分查询
         // $host = 'ww.chuangdc.cn';
@@ -75,24 +75,26 @@ class ClientController extends Controller
         //2.根据权限来显示页面上的数据 权限为
         //(1)-显示所有 (2)显示当前所有(打马赛克) 
         //(3)-除去xsy和sport的当前域名 (4).只显示xsy/sport
-        if (getUserRughts() == 1) {
+        $role = getUserRughts();
+        if ($role == 1) {
            $se_url_id = UrlMessage::select(['id'])->get();
-        }elseif (getUserRughts() == 2) {
+        }elseif ($role == 2) {
            $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')->get();
-        }elseif(getUserRughts() == 3){
+        }elseif($role == 3){
            $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')
-           ->where('url','not like','%xsy%')
-           ->where('url','not like','%sport%')
+           ->where('url','not like','%xsy')
+           ->where('url','not like','%mssx')
+           ->where('url','not like','%sport')
            ->get(); 
-        }elseif(getUserRughts() == 4){
-            $se_url_id = UrlMessage::select(['id'])->where('url','like','%xsy%')
-            ->orwhere('url','like','%sport%')
+        }elseif($role == 4){
+            $se_url_id = UrlMessage::select(['id'])->where('url','like','%xsy')
+            ->orwhere('url','like','%mssx')
+            ->orwhere('url','like','%sport')
             ->get();
         }
         if(!$se_url_id->isEmpty())
         {
             $se_url_id = $se_url_id ->toArray();
-
         }
 
 		// var_dump($se_url_id);
@@ -259,10 +261,5 @@ class ClientController extends Controller
         return $mark;
     }
 }
-
-
-
-
-
 
 ?>

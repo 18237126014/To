@@ -33,12 +33,15 @@
                         显示多少条数据
                     </label>
                 </div>
+                @if(getUserRughts() != 4)
                 <div class="control-group" style="display: inline-block">
                     <label class="control-label" style="width: 120px;">搜索日期</label>
                     <div class="controls ui-time" style="margin-left: 135px;">
                         <input type="text" id="dp11" class="layui-input ui-time-text" name="search_time" value="<?= !empty($_GET['search_time']) ? $_GET['search_time']:'' ?>" kssj="" jssj=""  style="height: 30px;width: 215px;" readonly/>
                     </div>
                 </div>
+                @endif
+               
                 <div class="control-group" style="display: inline-block">
                     <label class="control-label" style="width: 75px;">搜索</label>
                     <div class="controls" style="margin-left: 90px;">

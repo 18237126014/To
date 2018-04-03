@@ -221,9 +221,13 @@ function handingIp($ip)
 function getUserRughts()
 {
     //var_dump(session('user_id'));
-    $user_id = session('user_id');
-    $userInfo = \App\Admin\User::where('id',$user_id)->first()->toArray();
-    return $userInfo['user_role'];
+    if(!empty(session('user_id'))){
+        $user_id = session('user_id');
+        $userInfo = \App\Admin\User::where('id',$user_id)->first()->toArray();
+        return $userInfo['user_role'];
+    }else{
+        echo "<script>alert('您暂未登入,请登入后重试');window.location.href='/admin/login';</script>";
+    }
 }
 
 //返回路由标志

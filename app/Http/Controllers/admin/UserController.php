@@ -83,14 +83,36 @@ class UserController extends Controller
                 $mark = '神马';
                 break;
         }*/
-        $mark = getMark($host);
-
-        if($mark == '')
-        {
-            $se_url_id = UrlMessage::select(['id'])->get();    
-        }else{
-            $se_url_id = UrlMessage::select(['id'])->where('url_se',$mark)->get();
+        //不分类显示客户信息（首页）
+        // $mark = getMark($host);
+        // if($mark == '')
+        // {
+        //     $se_url_id = UrlMessage::select(['id'])->get();    
+        // }else{
+        //     $se_url_id = UrlMessage::select(['id'])->where('url_se',$mark)->get();
+        // }
+        
+        //2.根据权限来显示页面上的数据
+        //(1)-显示所有 (2)显示当前所有(打马赛克) 
+        //(3)-除去xsy和sport的当前域名 (4).只显示xsy/sport
+        $role = getUserRughts();
+        if ($role == 1) {
+           $se_url_id = UrlMessage::select(['id'])->get();
+        }elseif ($role == 2) {
+           $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')->get();
+        }elseif($role == 3){
+           $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')
+           ->where('url','not like','%xsy')
+           ->where('url','not like','%mssx')
+           ->where('url','not like','%sport')
+           ->get(); 
+        }elseif($role == 4){
+            $se_url_id = UrlMessage::select(['id'])->where('url','like','%xsy')
+            ->orwhere('url','like','%mssx')
+            ->orwhere('url','like','%sport')
+            ->get();
         }
+
         if(!$se_url_id->isEmpty())
         {
             $se_url_id = $se_url_id ->toArray();
@@ -172,18 +194,21 @@ class UserController extends Controller
         //2.根据权限来显示页面上的数据
         //(1)-显示所有 (2)显示当前所有(打马赛克) 
         //(3)-除去xsy和sport的当前域名 (4).只显示xsy/sport
-        if (getUserRughts() == 1) {
+        $role = getUserRughts();
+        if ($role == 1) {
            $se_url_id = UrlMessage::select(['id'])->get();
-        }elseif (getUserRughts() == 2) {
+        }elseif ($role == 2) {
            $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')->get();
-        }elseif(getUserRughts() == 3){
+        }elseif($role == 3){
            $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')
-           ->where('url','not like','%xsy%')
-           ->where('url','not like','%sport%')
+           ->where('url','not like','%xsy')
+           ->where('url','not like','%mssx')
+           ->where('url','not like','%sport')
            ->get(); 
-        }elseif(getUserRughts() == 4){
-            $se_url_id = UrlMessage::select(['id'])->where('url','like','%xsy%')
-            ->orwhere('url','like','%sport%')
+        }elseif($role == 4){
+            $se_url_id = UrlMessage::select(['id'])->where('url','like','%xsy')
+            ->orwhere('url','like','%mssx')
+            ->orwhere('url','like','%sport')
             ->get();
         }
 
@@ -195,20 +220,45 @@ class UserController extends Controller
         {
             $se_url_id = $se_url_id ->toArray();
         }
-        if ($request->session()->has('user_id')) {
-            $clients = Client::where(function ($query) use ($se_url_id){
-                foreach ($se_url_id as $v)
-                {
-                    $query -> orWhere('url',$v['id']);
-                }
-            })
-                ->latest('add_time')
-                ->paginate($data_num);
-            return view('admin1.all')->with([
-                'data' => $clients,
-                'num' => $request -> data_num,
-            ]);
-        } else {
+        if($request->session()->has('user_id')){
+            if($role != 4){
+                $clients = Client::where(function ($query) use ($se_url_id){
+                    foreach ($se_url_id as $v)
+                    {
+                        $query -> orWhere('url',$v['id']);
+                    }
+                })
+                    ->latest('add_time')
+                    ->paginate($data_num);
+                return view('admin1.all')->with([
+                    'data' => $clients,
+                    'num' => $request -> data_num,
+                ]);
+            }else{
+                //获取今天的时间戳
+                $now = time();
+                $now_date = date('Y-m-d',$now);//获取今天日期
+                $nowDateStr = strtotime($now_date); //获取今日0:0:0 的时间戳
+                $ywDate = $now_date.' 23:59:59';//拼接今日 23:59:59 凌晨前
+                $ywDateStr = strtotime($ywDate);
+                //$clients = Client::where('add_time','>',$nowDateStr)->where('add_time','<',$ywDateStr+1)->latest('add_time')->paginate($data_num);
+                $clients = Client::where(function ($query) use ($se_url_id) {
+                    foreach ($se_url_id as $v)
+                    {
+                        $query -> orWhere('url',$v['id']);
+                    }
+                })
+                    ->where('add_time','>',$nowDateStr)
+                    ->where('add_time','<',$ywDateStr+1)
+                    ->latest('add_time')
+                    ->paginate($data_num);
+                //return response()->json(DB::getQueryLog());
+                return view('admin1.index')->with([
+                    'data' => $clients,
+                    'num' => $request -> data_num,
+                ]);
+            }
+        }else{
             echo "<script>alert('您暂未登入,请登入后重试');window.location.href='/admin/login';</script>";
         }
     }
