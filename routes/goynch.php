@@ -256,7 +256,7 @@ Route::domain('ww.goynch.cn')->group(function () {
     {
         return view('cmsyuns.dfcf.pc_3_dfcf');
     });
-    //手机东方财富
+    //手机 东方财富
     Route::get('sdfcf',function()
     {
         return view('cmsyuns.dfcf.sj_3_dfcf');
@@ -306,6 +306,23 @@ Route::domain('ww.goynch.cn')->group(function () {
     //手机智能行情交易系统
     Route::get('sznhq',function(){
         return view('cmsyuns.znhq.sj_znhq');
+    });
+    //新增金十数据-pc
+    Route::get('xjssj',function(){
+        return view('cmsyuns.xjssj.xjssj');
+    });
+    //新增金十数据-sj
+    Route::get('sxjssj',function(){
+        return view('cmsyuns.xjssj.sj_xjssj');
+    });
+    
+    //响应式长江证劵-pc(未推广)
+    Route::get('cjzj',function(){
+        return view('cmsyuns.cjzj.cjzj');
+    });
+    //响应式长江证劵-手机(未推广)
+    Route::get('scjzj',function(){
+        return view('cmsyuns.cjzj.sj_cjzj');
     });
 	
 	
