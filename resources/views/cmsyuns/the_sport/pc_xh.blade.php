@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{url('css/the_sport/xh.css')}}">
     <link rel="stylesheet" href="{{url('css/form.css')}}">
     <script src="{{url('js/jquery.js')}}"></script>
-    <script src="{{url('js/layer/layer.js')}}"></script>
+    <!-- <script src="{{url('js/layer/layer.js')}}"></script> -->
     <style>
         .copyright{
             width:100%;
@@ -18,6 +18,9 @@
             margin-top: 0;}
         .copyright p{color:#fff;
             text-align: center; }
+        .top{
+            width:100%;
+        }
     </style>
 </head>
 <body>
@@ -108,8 +111,6 @@
                         </div>
                         <div class="clear"></div>
                     </div>
-
-
 
                     <div class="form-group">
                         <label for="txtSmsCode1" class="form-label">验证码</label>

@@ -307,13 +307,29 @@ Route::domain('ww.goynch.cn')->group(function () {
     Route::get('sznhq',function(){
         return view('cmsyuns.znhq.sj_znhq');
     });
-    //新增金十数据-pc
+    //新增-金十数据-pc
     Route::get('xjssj',function(){
         return view('cmsyuns.xjssj.xjssj');
     });
-    //新增金十数据-sj
+    //新增-金十数据-sj
     Route::get('sxjssj',function(){
         return view('cmsyuns.xjssj.sj_xjssj');
+    });
+    //新增-权威交易-pc
+    Route::get('jiaoyi',function(){
+        return view('cmsyuns.jiaoyi.pc_jiaoyi');
+    });
+    //新增-权威交易-sj
+    Route::get('sjiaoyi',function(){
+        return view('cmsyuns.jiaoyi.sj_jiaoyi');
+    });
+    //新增-2018投资神器-pc(investment投资)
+    Route::get('investment',function(){
+        return view('cmsyuns.2018tz.pc_2018tz');
+    });
+    //新增-2018投资神器-sj
+    Route::get('sinvestment',function(){
+        return view('cmsyuns.2018tz.sj_2018tz');
     });
     
     //响应式长江证劵-pc(未推广)

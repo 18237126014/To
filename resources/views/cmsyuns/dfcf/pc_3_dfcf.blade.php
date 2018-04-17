@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>东方财富手机版</title>
+    <title>智能投资软件</title>
     <link rel="stylesheet" href="{{url('css/share.css')}}">
     <link rel="stylesheet" href="{{url('css/dfcf/pc_dfcf.css')}}">
     <link rel="stylesheet" href="{{url('css/form.css')}}">
@@ -12,7 +12,8 @@
 <div class="div-1">
     <div class="top_con clearfix">
         <div class="left-1">
-            <img src="http://img.zengwf.com/images/dfcf/title.png" alt="" />
+            <!-- <img src="http://img.zengwf.com/images/dfcf/title.png" alt="" /> -->
+            <img src="http://p09rldi4k.bkt.clouddn.com//images/dfcf/tit.png" alt=""/>
             <ul class="downs">
                 <li class="sjAPP">
                     <div class="fl img_03"></div>

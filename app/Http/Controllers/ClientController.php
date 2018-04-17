@@ -66,6 +66,7 @@ class ClientController extends Controller
             session()->forget('yzm');
             return 200;
         }
+
         //处理数据
         $url = $request -> url;
 
@@ -76,9 +77,8 @@ class ClientController extends Controller
             $url = strstr($url,'?',true);
         }
         $url = trim($url,'/');
-        // echo $url;
         $urlId = UrlMessage::select(['id'])->where('url',$url)->first()->toArray()['id'];
-        ;
+        
         DB::beginTransaction();
         try{
             $client = new Client();

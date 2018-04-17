@@ -94,7 +94,8 @@ class UserController extends Controller
         
         //2.根据权限来显示页面上的数据
         //(1)-显示所有 (2)显示当前所有(打马赛克) 
-        //(3)-除去xsy和sport的当前域名 (4).只显示xsy/sport
+        //(3.1)-除去xsy/mssx和sport的当前域名 (4.1).只显示xsy/sport
+        //(3.2)-除去/和sznhq的当前域名 (4.2).只显示/和sznhq
         $role = getUserRughts();
         if ($role == 1) {
            $se_url_id = UrlMessage::select(['id'])->get();
@@ -102,14 +103,13 @@ class UserController extends Controller
            $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')->get();
         }elseif($role == 3){
            $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')
-           ->where('url','not like','%xsy')
-           ->where('url','not like','%mssx')
-           ->where('url','not like','%sport')
+           ->where('url','not like','%ww.goynch.cn')
+           ->where('url','not like','%sznhq')
            ->get(); 
         }elseif($role == 4){
-            $se_url_id = UrlMessage::select(['id'])->where('url','like','%xsy')
-            ->orwhere('url','like','%mssx')
-            ->orwhere('url','like','%sport')
+            $se_url_id = UrlMessage::select(['id'])
+            ->orwhere('url','like','%ww.goynch.cn')
+            ->orwhere('url','like','%sznhq')
             ->get();
         }
 
@@ -201,14 +201,13 @@ class UserController extends Controller
            $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')->get();
         }elseif($role == 3){
            $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')
-           ->where('url','not like','%xsy')
-           ->where('url','not like','%mssx')
-           ->where('url','not like','%sport')
+           ->where('url','not like','%ww.goynch.cn')
+           ->where('url','not like','%sznhq')
            ->get(); 
         }elseif($role == 4){
-            $se_url_id = UrlMessage::select(['id'])->where('url','like','%xsy')
-            ->orwhere('url','like','%mssx')
-            ->orwhere('url','like','%sport')
+            $se_url_id = UrlMessage::select(['id'])
+            ->orwhere('url','like','%ww.goynch.cn')
+            ->orwhere('url','like','%sznhq')
             ->get();
         }
 

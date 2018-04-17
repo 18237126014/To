@@ -1,0 +1,103 @@
+.*{
+	padding: 0;
+	margin: 0;
+}
+.container{
+	background-color: red;
+	margin: 0;
+	padding: 0;
+	/*position: absolute;*/
+}
+.s{
+	width: auto;
+	height: auto;
+}
+.s img{
+    width: 100%;
+    position: absolute; 
+    height: 100%;
+}
+.s1{
+    width: 100%;
+    position: absolute;
+    height: 29px;
+}
+.s2{
+ 	width: 100%;
+    position: absolute;
+    height: 40px;
+    margin-top: 28px;
+}
+.s3{
+ 	width: 100%;
+    position: absolute;
+    height: 40px;
+    margin-top: 67px;
+}
+.button{
+    width: 23%;
+    height: 53%;
+    position: absolute;
+    left: 54%;
+    top: 30%;
+}
+.s4{
+    width: 100%;
+    position: absolute;
+    height: 40px;
+    margin-top: 106px; 
+}
+.s5{
+    width: 100%;
+    position: absolute;
+    height: 40px;
+    margin-top: 145px; 
+}
+.s6{
+    width: 100%;
+    position: absolute;
+    height: 40px;
+    margin-top: 184px; 
+}
+.s7{
+    width: 100%;
+    position: absolute;
+    height: 40px;
+    margin-top: 223px; 
+}
+.s8{
+    width: 100%;
+    position: absolute;
+    height: 40px;
+    margin-top: 262px; 
+}
+.s9{
+    width: 100%;
+    position: absolute;
+    height: 40px;
+    margin-top: 301px; 
+}
+.s10{
+    width: 100%;
+    position: absolute;
+    height: 40px;
+    margin-top: 340px; 
+}
+.buttom{
+    position: absolute;
+    width: 100%;
+    background-color: #666262;
+    height: 64px;
+    margin-top: 379px;
+    text-align: center;
+    color: #fff;
+    line-height: 18px;
+}
+.buttom p{
+    margin-top: 3px;
+    margin-bottom: 0px;
+    font-size: 10px;
+}
+.buttom span{
+    font-size: 15px;
+}

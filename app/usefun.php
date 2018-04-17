@@ -218,6 +218,7 @@ function handingIp($ip)
 }
 //获取登录用户的权限等级
 //1 超级管理员 2业务员/操作员
+//出现登录bug时的解决(服务器上已传)
 function getUserRughts()
 {
     //var_dump(session('user_id'));
@@ -228,6 +229,12 @@ function getUserRughts()
     }else{
         echo "<script>alert('您暂未登入,请登入后重试');window.location.href='/admin/login';</script>";
     }
+
+    // $user_id = session('user_id');
+    // $userInfo = \App\Admin\User::where('id',$user_id)->first()->toArray();
+    // return $userInfo['user_role'];
+
+
 }
 
 //返回路由标志
