@@ -2,101 +2,110 @@
 	padding: 0;
 	margin: 0;
 }
+* {
+    border: none;
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei", sans-serif !important;
+}
 .container{
 	background-color: red;
 	margin: 0;
 	padding: 0;
-	/*position: absolute;*/
+	position: absolute;
 }
-.s{
+/*.s{
 	width: auto;
 	height: auto;
-}
+}*/
 .s img{
-    width: 100%;
-    position: absolute; 
+    vertical-align: middle;
+}
+.s>img{
     height: 100%;
 }
 .s1{
     width: 100%;
-    position: absolute;
-    height: 29px;
+    height: 149px;
+    margin-top: -2px;
 }
+
 .s2{
  	width: 100%;
-    position: absolute;
-    height: 40px;
-    margin-top: 28px;
+    height: 134px;
+    margin-top: -2px;
+    /*height: 200px;*/
 }
 .s3{
  	width: 100%;
-    position: absolute;
-    height: 40px;
-    margin-top: 67px;
+    height: 134px;
+    margin-top: -2px;
 }
 .button{
     width: 23%;
     height: 53%;
-    position: absolute;
+/*    position: absolute;
     left: 54%;
-    top: 30%;
+    top: 30%;*/
+}
+.button a img{
+    position: absolute;
+    width: 210px;
+    top: 313px;
+    left: 58%;
+    height: 93px;
 }
 .s4{
     width: 100%;
-    position: absolute;
-    height: 40px;
-    margin-top: 106px; 
+    height: 125px;
+    margin-top: -2px;
 }
 .s5{
     width: 100%;
-    position: absolute;
-    height: 40px;
-    margin-top: 145px; 
+    height: 125px;
+    margin-top: -2px; 
 }
 .s6{
     width: 100%;
-    position: absolute;
-    height: 40px;
-    margin-top: 184px; 
+    height: 134px;
+    margin-top: -2px;
 }
 .s7{
     width: 100%;
-    position: absolute;
-    height: 40px;
-    margin-top: 223px; 
+    height: 134px;
+    margin-top: -2px;
 }
 .s8{
     width: 100%;
-    position: absolute;
-    height: 40px;
-    margin-top: 262px; 
+    height: 200px;
+    margin-top: -2px;
 }
 .s9{
     width: 100%;
-    position: absolute;
-    height: 40px;
-    margin-top: 301px; 
+    height: 134px;
+    margin-top: -2px;
 }
 .s10{
     width: 100%;
-    position: absolute;
-    height: 40px;
-    margin-top: 340px; 
+    height: 134px;
+    margin-top: -2px;
 }
 .buttom{
-    position: absolute;
+    /*position: absolute;*/
     width: 100%;
     background-color: #666262;
     height: 64px;
-    margin-top: 379px;
+  /*  margin-top: 1979px;*/
     text-align: center;
     color: #fff;
     line-height: 18px;
+    margin-top: -2px;
 }
 .buttom p{
-    margin-top: 3px;
+    /*margin-top: 3px;*/
     margin-bottom: 0px;
     font-size: 10px;
+    padding-top: 10px;
 }
 .buttom span{
     font-size: 15px;

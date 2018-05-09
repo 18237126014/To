@@ -33,7 +33,7 @@
     <a href="javascript:void(0)" class="pc"></a>
     <p class="footer_p3">让&nbsp;你&nbsp;玩&nbsp;赚&nbsp;黄&nbsp;金</p>
     <p class="footer_p">投资有风险,入市需谨慎</p>
-    <p class="footer_p1">&copy; 版权所有：金创互动科技（深圳）有限公司   ICP备案号：粤ICP备16102940号-1</p>
+    <p class="footer_p1">&copy; 版权所有：韩城集升商贸有限公司</p>
 </div>
 {{--写跳转过来的页面--}}
 <input type="hidden" name="referr" value="<?= isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] :'' ?>">

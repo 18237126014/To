@@ -31,16 +31,23 @@ class ClientController extends Controller
         // $content = "%C4%FA%B5%C4%D1%E9%D6%A4%C2%EB%CA%C7%3A{$rand}%2C5%B7%D6%D6%D3%BA%F3%B9%FD%C6%DA%A3%AC%C7%EB%C4%FA%BC%B0%CA%B1%D1%E9%D6%A4%21";
         $username="zlyjjh";//用户名
         $password="emx5MTIzNDU2";//密码百度BASE64加密后密文
-        $url=$url."/servlet/UserServiceAPI?method=sendSMS&extenno=&isLongSms=0&username=".$username."&password=".$password."&smstype=2&mobile=".$request->phone."&content=".$content;
-
+        $phone = $request->phone;
+        $phone_preg ='/^1[345678]\d{9}$/';
+        if(preg_match($phone_preg,$phone)){
+            session(['phone'=>$phone]);
+            $url=$url."/servlet/UserServiceAPI?method=sendSMS&extenno=&isLongSms=0&username=".$username."&password=".$password."&smstype=2&mobile=".$phone."&content=".$content; 
+        }else{
+            return 401;
+        }
         $html = file_get_contents($url);
         //file_put_contents('./a.php',$html.$url);
         //var_dump($_GET);
+        
         if(!strpos($html,"success")){
             //返回验证码
             return '发送成功'.$rand;
         }else{
-            echo 400;
+            return  400;
         }
     }
 
@@ -59,6 +66,11 @@ class ClientController extends Controller
         if($request -> yzm != session('yzm'))
         {
             return 101;//验证码不正确
+        }
+        
+        //判断输入手机号是否被更改
+        if($request->phone != session('phone')){
+            return 105;//两次号码不一致,验证码不正确
         }
         //判断这个用户的ip是否重复
         if(handingIp($_SERVER['REMOTE_ADDR']))

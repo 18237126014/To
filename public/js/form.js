@@ -36,11 +36,12 @@ $(function()
             return false;
         }
         //写手机正则
+        // if($(userPhone).val())
         var phone_preg = /^1[34578]\d{9}$/;
         if(phone_preg.test($(userPhone).val()))
         {
             //匹配到正确手机号
-            //console.log($(userPhone).val());
+            // console.log($(userPhone).val());
             $.ajax({
                 url:'/send',
                 async:false,
@@ -51,6 +52,10 @@ $(function()
                 },
                 success:function(data,textStatus,jqXHR)
                 {
+                    if(data == 401){
+                        alert('请您输入正确的手机号');return false;
+                    }
+
                     if(data != 400)
                     {
                         //console.log($('#source').val());
@@ -69,6 +74,7 @@ $(function()
                         alert('验证码发送失败');
                         invokeSettime(btnYzm);
                     }
+                    
 
 
                 }
@@ -111,6 +117,8 @@ $(function()
                 }else if(data == 104)
                 {
                     alert('网络有延迟,请重试');
+                }else if(data == 105){
+                    alert('两次号码不一致,验证码不正确');
                 }else if(data == 200)
                 {
                     $(Form).css('display','none');

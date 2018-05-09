@@ -103,13 +103,17 @@ class UserController extends Controller
            $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')->get();
         }elseif($role == 3){
            $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')
-           ->where('url','not like','%ww.goynch.cn')
-           ->where('url','not like','%sznhq')
+           ->where('url','not like','%xsy')
+           ->where('url','not like','%mssx')
+           ->where('url','not like','%futures')
+           ->where('url','not like','%boyi')
            ->get(); 
         }elseif($role == 4){
             $se_url_id = UrlMessage::select(['id'])
-            ->orwhere('url','like','%ww.goynch.cn')
-            ->orwhere('url','like','%sznhq')
+            ->orwhere('url','like','%xsy')
+            ->orwhere('url','like','%mssx')
+            ->orwhere('url','like','%futures')
+            ->orwhere('url','like','%boyi')
             ->get();
         }
 
@@ -158,10 +162,6 @@ class UserController extends Controller
         
     }
 
-    
-    
-
-
     public function all(Request $request)
     {
         //echo $request-
@@ -201,13 +201,17 @@ class UserController extends Controller
            $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')->get();
         }elseif($role == 3){
            $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')
-           ->where('url','not like','%ww.goynch.cn')
-           ->where('url','not like','%sznhq')
+           ->where('url','not like','%xsy')
+           ->where('url','not like','%mssx')
+           ->where('url','not like','%futures')
+           ->where('url','not like','%boyi')
            ->get(); 
         }elseif($role == 4){
             $se_url_id = UrlMessage::select(['id'])
-            ->orwhere('url','like','%ww.goynch.cn')
-            ->orwhere('url','like','%sznhq')
+            ->orwhere('url','like','%xsy')
+            ->orwhere('url','like','%mssx')
+            ->orwhere('url','like','%futures')
+            ->orwhere('url','like','%boyi')
             ->get();
         }
 
@@ -220,7 +224,8 @@ class UserController extends Controller
             $se_url_id = $se_url_id ->toArray();
         }
         if($request->session()->has('user_id')){
-            if($role != 4){
+            //当权限为4的时候所有用户值显示当天的
+            // if($role != 4){
                 $clients = Client::where(function ($query) use ($se_url_id){
                     foreach ($se_url_id as $v)
                     {
@@ -233,30 +238,31 @@ class UserController extends Controller
                     'data' => $clients,
                     'num' => $request -> data_num,
                 ]);
-            }else{
-                //获取今天的时间戳
-                $now = time();
-                $now_date = date('Y-m-d',$now);//获取今天日期
-                $nowDateStr = strtotime($now_date); //获取今日0:0:0 的时间戳
-                $ywDate = $now_date.' 23:59:59';//拼接今日 23:59:59 凌晨前
-                $ywDateStr = strtotime($ywDate);
-                //$clients = Client::where('add_time','>',$nowDateStr)->where('add_time','<',$ywDateStr+1)->latest('add_time')->paginate($data_num);
-                $clients = Client::where(function ($query) use ($se_url_id) {
-                    foreach ($se_url_id as $v)
-                    {
-                        $query -> orWhere('url',$v['id']);
-                    }
-                })
-                    ->where('add_time','>',$nowDateStr)
-                    ->where('add_time','<',$ywDateStr+1)
-                    ->latest('add_time')
-                    ->paginate($data_num);
-                //return response()->json(DB::getQueryLog());
-                return view('admin1.index')->with([
-                    'data' => $clients,
-                    'num' => $request -> data_num,
-                ]);
-            }
+            // }
+            // else{
+            //     //获取今天的时间戳
+            //     $now = time();
+            //     $now_date = date('Y-m-d',$now);//获取今天日期
+            //     $nowDateStr = strtotime($now_date); //获取今日0:0:0 的时间戳
+            //     $ywDate = $now_date.' 23:59:59';//拼接今日 23:59:59 凌晨前
+            //     $ywDateStr = strtotime($ywDate);
+            //     //$clients = Client::where('add_time','>',$nowDateStr)->where('add_time','<',$ywDateStr+1)->latest('add_time')->paginate($data_num);
+            //     $clients = Client::where(function ($query) use ($se_url_id) {
+            //         foreach ($se_url_id as $v)
+            //         {
+            //             $query -> orWhere('url',$v['id']);
+            //         }
+            //     })
+            //         ->where('add_time','>',$nowDateStr)
+            //         ->where('add_time','<',$ywDateStr+1)
+            //         ->latest('add_time')
+            //         ->paginate($data_num);
+            //     //return response()->json(DB::getQueryLog());
+            //     return view('admin1.index')->with([
+            //         'data' => $clients,
+            //         'num' => $request -> data_num,
+            //     ]);
+            // }
         }else{
             echo "<script>alert('您暂未登入,请登入后重试');window.location.href='/admin/login';</script>";
         }

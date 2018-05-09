@@ -82,13 +82,17 @@ class ClientController extends Controller
            $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')->get();
         }elseif($role == 3){
            $se_url_id = UrlMessage::select(['id'])->where('url','like',$host.'%')
-           ->where('url','not like','%ww.goynch.cn')
-           ->where('url','not like','%sznhq')
+           ->where('url','not like','%xsy')
+           ->where('url','not like','%mssx')
+           ->where('url','not like','%futures')
+           ->where('url','not like','%boyi')
            ->get(); 
         }elseif($role == 4){
             $se_url_id = UrlMessage::select(['id'])
-            ->orwhere('url','like','%ww.goynch.cn')
-            ->orwhere('url','like','%sznhq')
+            ->orwhere('url','like','%xsy')
+            ->orwhere('url','like','%mssx')
+            ->orwhere('url','like','%futures')
+            ->orwhere('url','like','%boyi')
             ->get();
         }
         if(!$se_url_id->isEmpty())

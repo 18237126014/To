@@ -28,7 +28,8 @@
       <div class="s s10"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs10.jpg" alt=""></div>
       <div class="buttom">
         <p>投资有风险,入市需谨慎</p>
-        <span>© 版权所有：金创互动科技（深圳）有限公司 ICP备案号：粤ICP备16102940号-1</span>
+        <span>©版权所有：韩城集升商贸有限公司 
+        </span>
       </div>
     </div> 
 

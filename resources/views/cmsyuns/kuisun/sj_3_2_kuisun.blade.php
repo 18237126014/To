@@ -203,7 +203,7 @@
 </div>
 <div class="footer">
     <p>投资有风险，入市需谨慎</p>
-    <p>&copy; 版权所有：上海问财互联网金融信息服务有限公司  ICP备案号：沪ICP备16002215号</p>
+    <p>&copy; 版权所有：韩城集升商贸有限公司</p>
 </div>
 </div>
 <div class="btn_erwei " id="left_btn">领取红包</div>

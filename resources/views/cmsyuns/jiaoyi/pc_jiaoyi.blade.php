@@ -694,7 +694,7 @@ create_pc_media_set_pic('layer542A611DE77836C5338C15E5F80AD27F',false);
 
 <div class="botton">
 		<p>投资有风险,入市需谨慎</p>
-		<span>© 版权所有：金创互动科技（深圳）有限公司 ICP备案号：粤ICP备16102940号-1</span>
+		<span>© 版权所有：韩城集升商贸有限公司</span>
 
 </div>
 </div>

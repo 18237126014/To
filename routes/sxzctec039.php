@@ -1,5 +1,5 @@
 <?php
-Route::domain('ww.goynch.cn')->group(function () {
+Route::domain('ww.sxzctec039.cn')->group(function () {
 	//微信论坛推广微信1
     Route::get('lttg',function()
     {

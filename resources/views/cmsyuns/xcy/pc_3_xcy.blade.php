@@ -102,7 +102,7 @@
 </div>
 <div class="footer">
     <p><span>风险披露声明&nbsp;|&nbsp;免责声明</span></p>
-    <p class="copyright">© 2010-2017 金创互动科技（深圳）有限公司  版权所有</p>
+    <p class="copyright">© 版权所有：韩城集升商贸有限公司</p>
     <p id="fxtip">风险提示：黄金的保证金交易存在风险，客户须根据自身的情况考虑，投资有风险，入市需谨慎。</p>
 </div>
 {{--写跳转过来的页面--}}

@@ -1,49 +1,48 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="{{url('/css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{url('/css/2018tz/yd-common.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{url('/css/2018tz/form.css')}}">
+    <!-- 模态框 -->
+    <link href="{{url('/css/2018tz/sj_form.css')}}" rel="stylesheet">
     <script src="{{url('/js/jquery.js')}}"></script>
-    <title>2018投资神器</title>
+    <script src="{{url('js/form.js')}}"></script>
+    <title>本地sj2018投资神器</title>
   </head>
   <body>
+  <div class="container">
+    <div class="s s1"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs1.jpg" alt="" width="100%"></div>
+    <div class="s s2"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs2.jpg" alt="" width="100%"></div>
+    <div class="s s3"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs3.jpg" alt="" width="100%">
+      <div class="button">
+        <a target="_self" href="javascript:void(0)" class="androd btn">
+          <img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzanniu.gif" alt="">
+        </a>
+      </div></div>
+    <div class="s s4"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs4.jpg" alt="" width="100%"></div>
+    <div class="s s5"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs5.jpg" alt="" width="100%"></div>
+    <div class="s s6"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs6.jpg" alt="" width="100%"></div>
+    <div class="s s7"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs7.jpg" alt="" width="100%"></div>
+    <div class="s s8"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs8.jpg" alt="" width="100%"></div>
+    <div class="s s9"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs9.jpg" alt="" width="100%"></div>
+    <div class="s s10"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs10.jpg" alt="" width="100%"></div>
+    <div class="buttom">
+      <p>投资有风险,入市需谨慎</p>
+      <span>©版权所有：韩城集升商贸有限公司 
+        </span>
+    </div>
 
-<div class="container">
-  <div class="s s1"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs1.jpg" alt=""></div>
-  <div class="s s2"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs2.jpg" alt=""></div>
-  <div class="s s3"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs3.jpg" alt="">
-    <div class="button">
-      <a href="javascript:void(0)" class='downBtn'>
-        <img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzanniu.gif" alt="">
-      </a>
-    </div></div>
-  <div class="s s4"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs4.jpg" alt=""></div>
-  <div class="s s5"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs5.jpg" alt=""></div>
-  <div class="s s6"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs6.jpg" alt=""></div>
-  <div class="s s7"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs7.jpg" alt=""></div>
-  <div class="s s8"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs8.jpg" alt=""></div>
-  <div class="s s9"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs9.jpg" alt=""></div>
-  <div class="s s10"><img src="http://p09rldi4k.bkt.clouddn.com/images/2018tzs10.jpg" alt=""></div>
-  <div class="buttom">
-    <p>投资有风险,入市需谨慎</p>
-    <span>© 版权所有：金创互动科技（深圳）有限公司 ICP备案号：粤ICP备16102940号-1</span>
-  </div>
 </div>
-
 {{--写跳转过来的页面--}}
 <input type="hidden" name="referr" value="<?= isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] :'' ?>">
- <!-- 遮罩层 -->
-  <div class="layui-layer-shade" id="layui-layer-shade3" time="3" style="display:none;"></div>
+<!-- 遮罩层 -->
+    <div class="layui-layer-shade" id="layui-layer-shade3" time="3" style="display:none;"></div>
     <!--表单-->
     <div class="layui-layer layui-layer-page layer-form layer-anim" id="layui-layer3" type="page" showtime="0"time="3" contype="object" style="display: none;">
         <div id="" class="layui-layer-content">
             <div class="modal-form layui-layer-wrap" id="modal-form" style="display: block;">
-                <p style="font-size: 35px;color: #41A5DD;text-align: center;padding-top: 7px;">免费下载</p>
-                <p style="font-weight:normal; color:#999; font-family:宋体; font-size:12.5px;text-align: center;padding-top:10px;">（请正确填写手机号码，以便获取软件账号和密码！）</p>
+                <p style="font-size: 40px;color:#41A5DD ;text-align: center;padding-top: 40px;">免费下载</p>
+                <p style="font-weight:normal; color:#999; font-family:宋体; font-size:14px;text-align: center;padding-top:10px;">（请正确填写手机号码，以便获取软件账号和密码！）</p>
                 <form id="form-1" class="validate nice-validator n-default" action="index1.html#" method="post" novalidate="novalidate">    
                     <input type="hidden" name="_token" value="{{csrf_token()}}" id="_token">
                     <div class="form-content">
@@ -90,10 +89,11 @@
         <p>如安装过程中遇到问题，请扫描二维码添加您的专属客服</p>
         <p><a href="javascript:void(0)" class="wx_colse">关闭</a></p>
     </div>
-</body>
-<script>
+   
+  </body>
+  <script>
  //获取下载按钮
-    var Btns = $('.downBtn');
+    var Btns = $('.btn');
     //获取遮罩层和表单元素
     var mask = $('#layui-layer-shade3');
     var Form = $('#layui-layer3');
@@ -104,5 +104,4 @@
         $(Form).css('display','block');
     });
 </script>
-<script src="{{url('js/form.js')}}"></script>
 </html>
